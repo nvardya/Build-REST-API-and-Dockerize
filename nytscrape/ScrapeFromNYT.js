@@ -4,16 +4,16 @@ const { Pool } = require("pg");
 const URL_Setup = {
   hostname: 'api.nytimes.com',
   port: 443,
-  path: '/svc/mostpopular/v2/emailed/1.json?api-key=KoGc9hZD19iarsljrC6YsrsCQyYMtVXO',
+  path: '/svc/mostpopular/v2/emailed/1.json?api-key=********************',
   method: 'GET',
 };
 
 //A connection pool was used as opposed to a client
 const pool = new Pool({
   user: 'username',
-  host: 'nyt-db.cdfnbhvkuejj.us-east-2.rds.amazonaws.com',
-  database: 'mydb',
-  password: 'password',
+  host: 'nyt-d********.us-east-2.rds.amazonaws.com',
+  database: '****',
+  password: '*****',
   port: 5432,
 });
 
