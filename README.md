@@ -1,3 +1,5 @@
+#Buiild a Web App and Deploy with Docker
+
 This project is a web application that is deployed with a microservice archutecture. Docker Containers and Docker Compose support this architecture
 
 ![Docker Diagram](https://user-images.githubusercontent.com/53916435/174461271-08c9ab87-9140-4833-9f38-c1e2a1af454e.jpg)
@@ -8,6 +10,17 @@ This web appplication utilized the following applications for build:
   3. A React application to prompt users to search from the PostgresSQL database via an API request on the Golang application
 
 ![REST API Diagram1](https://user-images.githubusercontent.com/53916435/174461411-1c310bdb-421c-48ce-9484-1bf5b8e2e099.jpg)
+
+#Table of Contents
+1. Overview
+2. Build Node.js Web Scraper
+  2a. ScrapeFromNYT.js
+3. Build Golang REST API
+  3a. Install gorilla/mux
+4. Build React Front-End
+5. Build Dockefiles and Docker Compose file
+
+
 
 # Getting Started with Create React App
 
