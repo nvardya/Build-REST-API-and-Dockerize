@@ -82,6 +82,32 @@ The most important part of building `App.js` is to include the **useState** Reac
 ```javascript
 const [getResult, setGetResult] = useState(null);
 ```
+# 3. Build DockerFiles and Docker Compose YAML file
+As you know at this point, this application is really broken down into 3 separate microservices:
+
+1) Node.JS Web Scraper
+2) Golang REST API
+3) React Frontend
+
+Because they are all somehwat independent of each other, I decided to create Docker images and subsequently containers for each of them. Within each directory of this repository, you will find a `Dockerfile` file. This file is what will be used to create the Docker image. However, I wanted to take it a step further. Instead of having to make 3 separate commands to launch Docker containers for each part of my application, I decided to create a `docker-compose.yml` file that will orchestrate and luanch all 3 of my containers. See the below code (configs) in `docker-compose.yml`:
+
+```YAML
+version: '3'
+services:
+  nytscrape:
+    build: ./nytScrape
+    volumes:
+     - .:/code
+  buildrestapi:
+    build: ./buildrestapi
+    ports:
+      - "10000:10000"
+  react-api:
+    build: ./react-api
+    ports:
+      - "3000:3000"
+```
+Remmeber, a Dockerfile will need to be created for each directory/microservice in this web application. You can see that all 3 Dockerfiles are mentioned in the above YAML code. Run `docker-compose.yml` in your terminal to launch the YAML file and your application will be launched!
 
 # Getting Started with Create React App
 
