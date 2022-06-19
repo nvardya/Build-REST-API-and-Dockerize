@@ -1,6 +1,6 @@
 # Build a Microservice Based Web App and Deploy with Docker
 
-This project is a web application built with a microservice architecture. Docker Containers and Docker Compose support the deployment of these microservices. This document will outline the steps needed to build and deploy this web application.
+This project is a web application built with a microservice architecture. Docker Containers and Docker Compose support the deployment of these microservices. This document utlines the steps needed to build and deploy this web application.
 
 # 1. Overview
 3 total microservices were created to support the web application. A Docker Container was created for each of them. Docker Compose orchestrates the deploymenmt of all 3 containers:
@@ -68,7 +68,7 @@ http.Handle("/", router)
 log.Fatal(http.ListenAndServe(":10000", nil))
 ```
 # 4. Build React Frontend
-React will be used to interact with the user. There are 2 React components that will be created for this piece of the application:
+React will be used to interface with the user. There are 2 React components that will be created for this piece of the application:
 1) `App.js`: This will prompt the user to enter and search for a keyword that they are looking for. If this key word exists in one of the article records in our PostgreSQL table, it will be displayed
 2) `article.js`: This will return the article results from the PostgreSQL table based off the keyword input entered by the user
 
@@ -84,7 +84,7 @@ As you know at this point, this application is really broken down into 3 separat
 2) Golang REST API
 3) React Frontend
 
-Because they are all somehwat independent of each other, I decided to create Docker images and subsequently containers for each of them. Within each directory of this repository, you will find a `Dockerfile` file. This file is what will be used to create a Docker image of the microservice. However, I wanted to take it a step further. Instead of having to make 3 separate commands to launch Docker containers for each part of my application, I decided to create a `docker-compose.yml` file that will orchestrate and luanch all 3 of my containers. See the below code (configs) in `docker-compose.yml`:
+Because they are all somehwat independent of each other, I decided to create Docker Images and subsequently Containers for each of them. Within each directory of this repository, you will find a `Dockerfile` file. This file is what will be used to create a Docker Image of the microservice. However, I wanted to take it a step further. Instead of having to make 3 separate commands to launch Docker Containers for each part of my web application, I decided to create a `docker-compose.yml` file that will orchestrate and luanch all 3 of my Docker Containers. See the below code (configs) in `docker-compose.yml`:
 
 ```YAML
 version: '3'
