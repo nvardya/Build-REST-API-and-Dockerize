@@ -109,3 +109,8 @@ Remmeber, a Dockerfile will need to be created for each directory/microservice i
 Run `docker-compose up` in your terminal to launch the YAML file and your application will be launched!
 
 https://user-images.githubusercontent.com/53916435/174465985-36ca9342-6346-46f8-aba3-b83573802a43.mov
+
+# 6. Appendix
+The Docker Images pushed for this project have been pushed to Docker Hub. You can view them [here](https://hub.docker.com/u/nvardya)
+![Screen Shot 2022-06-19 at 9 52 21 AM](https://user-images.githubusercontent.com/53916435/174491811-4e09b0b3-9567-416e-bd8b-3c1d51c733a9.png)
+
