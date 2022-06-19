@@ -20,11 +20,11 @@ type Article struct {
 
 
 const (
-  host     = "nyt-db.cdfnbhvkuejj.us-east-2.rds.amazonaws.com"
+  host     = "nyt-d*******.us-east-2.rds.amazonaws.com"
 	port     = 5432
-	user     = "username"
-	password = "password"
-	dbname   = "mydb"
+	user     = "*****"
+	password = "*****"
+	dbname   = "****"
 )
 
 
