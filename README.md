@@ -5,7 +5,7 @@ This project is a web application that is built with a microservice archutecture
 # 1. Overview
 3 total microservices were created to support the web application. A Docker Container was created for each of them. Docker Compose orchestrates the launch of all 3 containers:
 
-![Docker Diagram](https://user-images.githubusercontent.com/53916435/174461271-08c9ab87-9140-4833-9f38-c1e2a1af454e.jpg)
+![image](https://user-images.githubusercontent.com/53916435/174485385-0805fe92-ccc4-4732-b119-b61f10385b53.png)
 
 This web appplication utilized the following for build:
 
@@ -13,17 +13,7 @@ This web appplication utilized the following for build:
   2. A Golang application to build a REST API (GET, PUT, POST operations) to interact with the PostgreSQL database
   3. A React application to prompt users to search from the PostgreSQL database via an API request on the Golang application
 
-![REST API Diagram1](https://user-images.githubusercontent.com/53916435/174461411-1c310bdb-421c-48ce-9484-1bf5b8e2e099.jpg)
-
-#Table of Contents
-1. Overview
-2. Build Node.js Web Scraper
-  2a. ScrapeFromNYT.js
-3. Build Golang REST API
-  3a. Install gorilla/mux
-4. Build React Frontend
-5. Build Dockefiles and Docker Compose file
-
+![image](https://user-images.githubusercontent.com/53916435/174485404-7e723d09-c1b0-4722-9c71-ee791e596373.png)
 
 # 2. Build Node.js Web Scraper
 The Node.js Web Scraper will perform the following steps:
