@@ -1,4 +1,4 @@
-# Build a Microservice Web App and Deploy with Docker
+# Build a Microservice Based Web App and Deploy with Docker
 
 This project is a web application that is built with a microservice archutecture. Docker Containers and Docker Compose support the deployment of these microservices. This document will outline the steps needed to create this web application
 
