@@ -1,12 +1,10 @@
 version: '3'
 services:
   nytscrape:
-    # will build ./docker/web/Dockerfile
     build: ./nytScrape
     volumes:
      - .:/code
   buildrestapi:
-    # will build ./docker/db/Dockerfile
     build: ./buildrestapi
     ports:
       - "10000:10000"
