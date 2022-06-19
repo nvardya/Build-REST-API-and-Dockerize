@@ -1,6 +1,6 @@
 # Buiild a Web App and Deploy with Docker
 
-This project is a web application that is deployed with a microservice archutecture. Docker Containers and Docker Compose support this architecture
+This project is a web application that is built with microservice archutecture. Docker Containers and Docker Compose support this the deployment of these microservices
 
 ![Docker Diagram](https://user-images.githubusercontent.com/53916435/174461271-08c9ab87-9140-4833-9f38-c1e2a1af454e.jpg)
 
@@ -82,14 +82,14 @@ The most important part of building `App.js` is to include the **useState** Reac
 ```javascript
 const [getResult, setGetResult] = useState(null);
 ```
-# 3. Build DockerFiles and Docker Compose YAML file
+# 4. Build DockerFiles and Docker Compose YAML file
 As you know at this point, this application is really broken down into 3 separate microservices:
 
 1) Node.JS Web Scraper
 2) Golang REST API
 3) React Frontend
 
-Because they are all somehwat independent of each other, I decided to create Docker images and subsequently containers for each of them. Within each directory of this repository, you will find a `Dockerfile` file. This file is what will be used to create the Docker image. However, I wanted to take it a step further. Instead of having to make 3 separate commands to launch Docker containers for each part of my application, I decided to create a `docker-compose.yml` file that will orchestrate and luanch all 3 of my containers. See the below code (configs) in `docker-compose.yml`:
+Because they are all somehwat independent of each other, I decided to create Docker images and subsequently containers for each of them. Within each directory of this repository, you will find a `Dockerfile` file. This file is what will be used to create a Docker image of the microservice. However, I wanted to take it a step further. Instead of having to make 3 separate commands to launch Docker containers for each part of my application, I decided to create a `docker-compose.yml` file that will orchestrate and luanch all 3 of my containers. See the below code (configs) in `docker-compose.yml`:
 
 ```YAML
 version: '3'
@@ -107,7 +107,15 @@ services:
     ports:
       - "3000:3000"
 ```
-Remmeber, a Dockerfile will need to be created for each directory/microservice in this web application. You can see that all 3 Dockerfiles are mentioned in the above YAML code. Run `docker-compose.yml` in your terminal to launch the YAML file and your application will be launched!
+Remmeber, a Dockerfile will need to be created for each directory/microservice in this web application. You can see that all 3 Dockerfiles are mentioned in the above YAML code. Additionally, I recommend downloading the Docker desktop app as you can see your Docker Images and Containers. Below is a snapshot from my Docker desktop app of my Docker Compose container:
+
+<img width="1268" alt="Screen Shot 2022-06-18 at 9 17 13 PM" src="https://user-images.githubusercontent.com/53916435/174465644-3c0f137b-751a-4a9c-ac70-0bda50e43711.png">
+
+Run `docker-compose up` in your terminal to launch the YAML file and your application will be launched!
+
+https://user-images.githubusercontent.com/53916435/174465532-a2a6bcf4-a989-47cb-98ed-90f74bbc739c.mov
+
+
 
 # Getting Started with Create React App
 
