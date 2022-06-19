@@ -1,4 +1,4 @@
-#Buiild a Web App and Deploy with Docker
+# Buiild a Web App and Deploy with Docker
 
 This project is a web application that is deployed with a microservice archutecture. Docker Containers and Docker Compose support this architecture
 
