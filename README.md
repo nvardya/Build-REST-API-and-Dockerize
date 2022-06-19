@@ -30,7 +30,48 @@ A `ScrapeFromNYT.js` file will be created.
 
 A New York Times developer account will be required. Details of NYT's API endpoints can be found [here](https://developer.nytimes.com). Once you create your NYT API account, setting up the connection to your NYT API account in `ScrapeFromNYT.js` is quite simple:
 
+```javascript
+const URL_Setup = {
+  hostname: 'api.nytimes.com',
+  port: 443,
+  path: '/svc/mostpopular/v2/emailed/1.json?api-key=********************',
+  method: 'GET',
+};
+});
+```
 
+You will also need to setup a connection to your PostgreSQL database:
+
+```javascript
+//A connection pool was used as opposed to a client
+const pool = new Pool({
+  user: 'username',
+  host: 'nyt-d********.us-east-2.rds.amazonaws.com',
+  database: '****',
+  password: '*****',
+  port: 5432,
+});
+```
+
+Please see `ScrapeFromNYT.js` for details on inserting data returned from NYT into the PostgreSQL table
+
+# 2. Build Golang REST API
+Golang will be used to create a REST API and connect it to the PostgreSQL database. GET, PUT, and POST operations will be created.
+
+A `main.go` file will be created.
+
+The `gorilla/mux` package is the foundation of creating the REST API. `gorilla/mux` implements a request router and matches incoming HTTP requests agaianst a list of registered routes. Adiditional details on the package can be found [here](https://github.com/gorilla/mux).
+
+The followng code in `main.go` summarizes what will be built in this file (a request router and GET/PUT/POST handlers):
+
+```golang
+router := mux.NewRouter().StrictSlash(true)
+router.HandleFunc("/article/{query}", GETHandler).Methods("GET")
+router.HandleFunc("/article/{id}", PUTHandler).Methods("PUT")
+router.HandleFunc("/article/insert", POSTHandler)
+http.Handle("/", router)
+log.Fatal(http.ListenAndServe(":10000", nil))
+```
 
 # Getting Started with Create React App
 
