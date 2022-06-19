@@ -26,9 +26,9 @@ The Node.js part of the web application will perform the following steps:
 1) Access the New York Time's API endpoint and make a GET call to gather the most popular articles from the past 7 days
 2) Insert the articles gathered from the previous step into a PostgreSQL database
 
-A 'ScrapeFromNYT.js' file will be created
+A 'ScrapeFromNYT.js' file will be created.\
 
-A New York Times developer account will be required. Details of NYT's API endpoints can be found [here](https://developer.nytimes.com). Once you create your NYT API account, setting up the connection to your NYT API account in 'ScrapeFromNYT.js' is quite simple:
+A New York Times developer account will be required. Details of NYT's API endpoints can be found [here](https://developer.nytimes.com). Once you create your NYT API account, setting up the connection to your NYT API account in 'ScrapeFromNYT.js' is quite simple:.\
 
 
 
