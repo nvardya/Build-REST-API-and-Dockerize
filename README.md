@@ -17,7 +17,7 @@ This web appplication utilized the following applications for build:
   2a. ScrapeFromNYT.js
 3. Build Golang REST API
   3a. Install gorilla/mux
-4. Build React Front-End
+4. Build React Frontend
 5. Build Dockefiles and Docker Compose file
 
 
@@ -71,6 +71,16 @@ router.HandleFunc("/article/{id}", PUTHandler).Methods("PUT")
 router.HandleFunc("/article/insert", POSTHandler)
 http.Handle("/", router)
 log.Fatal(http.ListenAndServe(":10000", nil))
+```
+# 3. Build React Frontend
+React will be used to interact with the user. There are 2 React components that will be created for this piece of the application:
+1) `App.js`: This will prompt the user to enter and search for a keyword that they are looking for. If this key word exists in one of the article records in our PostgreSQL table, it will be displayed
+2) `article.js`: This will return the article results from the PostgreSQL table based off the keyword input entered by the user
+
+The most important part of building `App.js` is to include the **useState** React Hook. This allows us to return the appropriate articles from the PostgreSQL datababse whenever the user enters a new keyword in the seearch bar
+
+```javascript
+const [getResult, setGetResult] = useState(null);
 ```
 
 # Getting Started with Create React App
