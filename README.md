@@ -5,9 +5,9 @@ This project is a web application that is deployed with a microservice archutect
 ![Docker Diagram](https://user-images.githubusercontent.com/53916435/174461271-08c9ab87-9140-4833-9f38-c1e2a1af454e.jpg)
 
 This web appplication utilized the following applications for build:
-  1. A Node.js application to scrape data from The New York Time's REST API endpoint and send the data to a PostgresSQL database
-  2. A Golang application to build a REST API (GET, PUT, POST operations) to interact with the PostgresSQL database
-  3. A React application to prompt users to search from the PostgresSQL database via an API request on the Golang application
+  1. A Node.js application to scrape data from The New York Time's REST API endpoint and send the data to a PostgreSQL database
+  2. A Golang application to build a REST API (GET, PUT, POST operations) to interact with the PostgreSQL database
+  3. A React application to prompt users to search from the PostgreSQL database via an API request on the Golang application
 
 ![REST API Diagram1](https://user-images.githubusercontent.com/53916435/174461411-1c310bdb-421c-48ce-9484-1bf5b8e2e099.jpg)
 
@@ -19,6 +19,14 @@ This web appplication utilized the following applications for build:
   3a. Install gorilla/mux
 4. Build React Front-End
 5. Build Dockefiles and Docker Compose file
+
+
+# 1. Build Node.js Web Scraper
+The Node.js part of the web application will perform the following steps:
+1) Access the New York Time's API endpoint and make a GET call to gather the most popular articles from the past 7 days
+2) Insert the articles gathered from the previous step into a PostgreSQL database
+
+A New York Times developer account will be required. Details of NYT's API endpoints can be found here 
 
 
 
