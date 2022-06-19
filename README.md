@@ -1,10 +1,14 @@
-# Buiild a Web App and Deploy with Docker
+# Build a Microservice Web App and Deploy with Docker
 
-This project is a web application that is built with microservice archutecture. Docker Containers and Docker Compose support this the deployment of these microservices
+This project is a web application that is built with a microservice archutecture. Docker Containers and Docker Compose support the deployment of these microservices. This document will outline the steps needed to create this web application
+
+# 1. Overview
+3 total microservices were created to support the web application. A Docker Container was created for each of them. Docker Compose orchestrates the launch of all 3 containers:
 
 ![Docker Diagram](https://user-images.githubusercontent.com/53916435/174461271-08c9ab87-9140-4833-9f38-c1e2a1af454e.jpg)
 
-This web appplication utilized the following applications for build:
+This web appplication utilized the following for build:
+
   1. A Node.js application to scrape data from The New York Time's REST API endpoint and send the data to a PostgreSQL database
   2. A Golang application to build a REST API (GET, PUT, POST operations) to interact with the PostgreSQL database
   3. A React application to prompt users to search from the PostgreSQL database via an API request on the Golang application
@@ -21,9 +25,10 @@ This web appplication utilized the following applications for build:
 5. Build Dockefiles and Docker Compose file
 
 
-# 1. Build Node.js Web Scraper
-The Node.js part of the web application will perform the following steps:
-1) Access the New York Time's API endpoint and make a GET call to gather the most popular articles from the past 7 days
+# 2. Build Node.js Web Scraper
+The Node.js Web Scraper will perform the following steps:
+
+1) Access The New York Time's API endpoint and make an API call to gather the most popular articles from the past 7 days
 2) Insert the articles gathered from the previous step into a PostgreSQL database
 
 A `ScrapeFromNYT.js` file will be created.
@@ -55,7 +60,7 @@ const pool = new Pool({
 
 Please see `ScrapeFromNYT.js` for details on inserting data returned from NYT into the PostgreSQL table
 
-# 2. Build Golang REST API
+# 3. Build Golang REST API
 Golang will be used to create a REST API and connect it to the PostgreSQL database. GET, PUT, and POST operations will be created.
 
 A `main.go` file will be created.
@@ -72,7 +77,7 @@ router.HandleFunc("/article/insert", POSTHandler)
 http.Handle("/", router)
 log.Fatal(http.ListenAndServe(":10000", nil))
 ```
-# 3. Build React Frontend
+# 4. Build React Frontend
 React will be used to interact with the user. There are 2 React components that will be created for this piece of the application:
 1) `App.js`: This will prompt the user to enter and search for a keyword that they are looking for. If this key word exists in one of the article records in our PostgreSQL table, it will be displayed
 2) `article.js`: This will return the article results from the PostgreSQL table based off the keyword input entered by the user
@@ -82,7 +87,7 @@ The most important part of building `App.js` is to include the **useState** Reac
 ```javascript
 const [getResult, setGetResult] = useState(null);
 ```
-# 4. Build DockerFiles and Docker Compose YAML file
+# 5. Build DockerFiles and Docker Compose YAML file
 As you know at this point, this application is really broken down into 3 separate microservices:
 
 1) Node.JS Web Scraper
@@ -113,74 +118,4 @@ Remmeber, a Dockerfile will need to be created for each directory/microservice i
 
 Run `docker-compose up` in your terminal to launch the YAML file and your application will be launched!
 
-https://user-images.githubusercontent.com/53916435/174465532-a2a6bcf4-a989-47cb-98ed-90f74bbc739c.mov
-
-
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+https://user-images.githubusercontent.com/53916435/174465985-36ca9342-6346-46f8-aba3-b83573802a43.mov
