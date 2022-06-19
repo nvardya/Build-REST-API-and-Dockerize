@@ -1,10 +1,17 @@
+This project is a web application that is deployed with a microservice archutecture. Docker Containers and Docker Compose support this architecture
+
+![Docker Diagram](https://user-images.githubusercontent.com/53916435/174461271-08c9ab87-9140-4833-9f38-c1e2a1af454e.jpg)
+
+This web appplication utilized the following applications for build:
+  1. A Node.js application to scrape data from The New York Time's REST API endpoint and send the data to a PostgresSQL database
+  2. A Golang application to build a REST API (GET, PUT, POST operations) to interact with the PostgresSQL database
+  3. A React application to prompt users to search from the PostgresSQL database via an API request on the Golang application
+
+![REST API Diagram1](https://user-images.githubusercontent.com/53916435/174461411-1c310bdb-421c-48ce-9484-1bf5b8e2e099.jpg)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-![Docker Diagram](https://user-images.githubusercontent.com/53916435/174461271-08c9ab87-9140-4833-9f38-c1e2a1af454e.jpg)
-![REST API Diagram1](https://user-images.githubusercontent.com/53916435/174461411-1c310bdb-421c-48ce-9484-1bf5b8e2e099.jpg)
-
 
 
 ### `npm start`
