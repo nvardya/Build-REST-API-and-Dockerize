@@ -28,7 +28,7 @@ The Node.js part of the web application will perform the following steps:
 
 A 'ScrapeFromNYT.js' file will be created
 
-A New York Times developer account will be required. Details of NYT's API endpoints can be found [here] (https://developer.nytimes.com/). Once you create your NYT API account, setting up the connection to your NYT API account in 'ScrapeFromNYT.js' is quite simple:
+A New York Times developer account will be required. Details of NYT's API endpoints can be found [here](https://developer.nytimes.com). Once you create your NYT API account, setting up the connection to your NYT API account in 'ScrapeFromNYT.js' is quite simple:
 
 
 
