@@ -2,9 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+![Docker Diagram](https://user-images.githubusercontent.com/53916435/174461271-08c9ab87-9140-4833-9f38-c1e2a1af454e.jpg)
 
-In the project directory, you can run:
 
 ### `npm start`
 
