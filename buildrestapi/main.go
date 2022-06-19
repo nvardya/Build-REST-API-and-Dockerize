@@ -134,7 +134,7 @@ func POSTHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
   router := mux.NewRouter().StrictSlash(true)
-	router.HandleFunc("/article/{query}", GETHandler).Methods("GET")
+  router.HandleFunc("/article/{query}", GETHandler).Methods("GET")
   router.HandleFunc("/article/{id}", PUTHandler).Methods("PUT")
   router.HandleFunc("/article/insert", POSTHandler)
   //https://stackoverflow.com/questions/14081066/gae-golang-gorilla-mux-404-page-not-found
