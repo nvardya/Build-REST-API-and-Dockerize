@@ -3,7 +3,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ![Docker Diagram](https://user-images.githubusercontent.com/53916435/174461271-08c9ab87-9140-4833-9f38-c1e2a1af454e.jpg)
-<img src="https://user-images.githubusercontent.com/53916435/174461271-08c9ab87-9140-4833-9f38-c1e2a1af454e.jpg" width="250", height = "100">
+<img src="https://user-images.githubusercontent.com/53916435/174461271-08c9ab87-9140-4833-9f38-c1e2a1af454e.jpg" width="250", height = "50">
 
 
 ### `npm start`
